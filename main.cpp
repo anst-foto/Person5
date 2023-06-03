@@ -8,8 +8,7 @@
 using namespace std;
 
 int main() {
-    Person* person = new Person(new RussianName("Starinin", "Andrey", "Nikolaevich"), "+79042144491");
-
+    Person* person = new Person(new RussianName("Starinin", "Andrey", "Nikolaevich"), new Phone(7, 904, 21444941));
     cout << person->ToString() << endl;
 
     return 0;

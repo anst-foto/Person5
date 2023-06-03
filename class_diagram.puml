@@ -26,13 +26,23 @@ class EuropeName {
 + GetFullName() : string
 }
 
+class Phone {
+- country : int
+- operator : int
+- number : int
+
++ Phone(country : int, operator : int, number : int)
+
++ ToString() : string
+}
 
 AbstractName <--* Person
+Phone <--* Person
 class Person {
 - name : AbstractName
-- phone : string
+- phone : Phone
 
-+ Person(name : AbstractName, phone : string)
++ Person(name : AbstractName, phone : Phone)
 
 + ToString() : string
 }
