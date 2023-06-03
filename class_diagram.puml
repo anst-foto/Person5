@@ -1,0 +1,40 @@
+@startuml
+
+abstract class AbstractName {
+# name : string
+
++ {abstract} GetFullName() : string
+}
+
+AbstractName <|-- RussianName
+class RussianName {
+- family : string
+- patronymic : string
+
++ RussianName(family : string, name : string, patronymic : string)
+
++ GetFullName() : string
+}
+
+AbstractName <|-- EuropeName
+class EuropeName {
+- second_name : string
+- last_name : string
+
++ EuropeName(first_name : string, second_name : string, last_name : string)
+
++ GetFullName() : string
+}
+
+
+AbstractName <--* Person
+class Person {
+- name : AbstractName
+- phone : string
+
++ Person(name : AbstractName, phone : string)
+
++ ToString() : string
+}
+
+@enduml
